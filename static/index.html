@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartHome Monitor</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/script.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div>
+            <p class="eyebrow">MAISON CONNECTÉE</p>
+            <h1>SmartHome Monitor</h1>
+            <p class="subtitle">Surveillez votre maison intelligemment.</p>
+        </div>
+        <div class="connection">
+            <span id="connectionDot" class="dot"></span>
+            <span id="connectionStatus">Connexion...</span>
+        </div>
+    </header>
+
+    <main>
+        <section class="welcome">
+            <div>
+                <h2>Tableau de bord</h2>
+                <p>Voici l'état actuel de votre environnement.</p>
+            </div>
+            <button id="refreshButton">Actualiser</button>
+        </section>
+
+        <section class="sensor-grid">
+            <article class="sensor-card">
+                <div class="sensor-icon temperature">🌡️</div>
+                <p class="sensor-label">Température</p>
+                <p class="sensor-value"><span id="temperature">--</span><small> °C</small></p>
+                <p class="sensor-description">Température ambiante</p>
+            </article>
+
+            <article class="sensor-card">
+                <div class="sensor-icon humidity">💧</div>
+                <p class="sensor-label">Humidité</p>
+                <p class="sensor-value"><span id="humidity">--</span><small> %</small></p>
+                <p class="sensor-description">Humidité de l'air</p>
+            </article>
+
+            <article class="sensor-card">
+                <div class="sensor-icon light">💡</div>
+                <p class="sensor-label">Luminosité</p>
+                <p class="sensor-value"><span id="light">--</span><small> lux</small></p>
+                <p class="sensor-description">Intensité lumineuse simulée</p>
+            </article>
+
+            <article class="sensor-card">
+                <div class="sensor-icon motion">🚶</div>
+                <p class="sensor-label">Détection de mouvement</p>
+                <p id="motion" class="sensor-value motion-value">--</p>
+                <p class="sensor-description">État du capteur de mouvement</p>
+            </article>
+        </section>
+
+        <section class="details-card">
+            <h2>État du système</h2>
+            <p>Dernière mise à jour : <strong id="updatedAt">En attente...</strong></p>
+            <p>Source des données : <strong>Capteurs simulés</strong></p>
+            <p id="message" role="status">Chargement des données...</p>
+        </section>
+    </main>
+
+    <footer>
+        SmartHome Monitor · Projet IoT avec Python et FastAPI
+    </footer>
+</body>
+</html>
